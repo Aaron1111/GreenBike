@@ -1,101 +1,107 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>GreenBike IPB</title>
+@section('content')
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+<style>
+body {font-family: "Lato", sans-serif;
+      color:white;
+      background: url("/images/welcome.jpg");
+      background-repeat: no-repeat;
+      background-size: 100%;
+}
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background: url("/images/welcome.jpg");
-                background-repeat: no-repeat;
-                background-size: 100%;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+@font-face {
+    font-family: trash;
+    src: url(TrashHand.ttf);
+}
+@font-face {
+    font-family: trash;
+}
 
-            .full-height {
-                height: 100vh;
-            }
+.content {
+    text-align: center;
+    font-family: TrashHand;
+    color : white;
+}
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+.title {
+    font-size: 100px;
+    padding-top: 150px;
+    font-family: TrashHand;
+    color : white;
+    text-align: center;
+}
+.top{
+    height: 70px;
+    width: 100%;
+    background-color: white;
+    position : relative;
+    background: linear-gradient(to right, #00537e, #3aa17e);
+}
 
-            .position-ref {
-                position: relative;
-            }
+.button3 {
+  font-family: TrashHand;
+  float: center;
+  border-radius: 4px;
+  background-color: black;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 40px;
+  padding: 3px;
+  width: 170px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+.button3 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
 
-            .content {
-                text-align: center;
-            }
+.button3 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
 
-            .title {
-                font-size: 84px;
-                color: white;
-            }
+.button3:hover span {
+  padding-right: 25px;
+}
 
-            .links > a {
-                color: #fff;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+.button3:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+</head>
+<body background: "welcome.jpg">
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+      <h4 class="title">Selamat Datang<br>
+        di GreenBike IPB</h4>
 
-                       <!--  @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif -->
-                    @endauth
-                </div>
-            @endif
+        @if (Route::has('login'))
+                @auth
+                <center>
+                <form>
+                      <input class="button3" type="button" value="Beranda" onclick="window.location.href='/home'" />
+                </form>
+              </center>
+                @endauth
+        @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    GreenBike
-                </div>
-<!--
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div> -->
-            </div>
-        </div>
-    </body>
+</body>
 </html>
+
+@endsection
