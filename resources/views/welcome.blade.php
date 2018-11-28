@@ -86,7 +86,7 @@ body {font-family: "Lato", sans-serif;
 }
 </style>
 </head>
-<body background: "welcome.jpg">
+<body>
 
       <h4 class="title">Selamat Datang<br>
         di GreenBike IPB</h4>
