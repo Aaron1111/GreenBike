@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>GreenBike</title>
+        <title>GreenBike IPB</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -12,7 +12,9 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-image: radial-gradient(green 35%,blue);
+                background: url("/images/welcome.jpg");
+                background-repeat: no-repeat;
+                background-size: 100%;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -84,7 +86,7 @@
                 <div class="title m-b-md">
                     GreenBike
                 </div>
-<!-- 
+<!--
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>

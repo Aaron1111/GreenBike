@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Aksi</div>
+                <div class="card-header"><center>Daftar Semua Sepeda</center></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <a href="{{ route('shares.create')}}" class="btn btn-primary">Tambah sepjhvjdcheda</a>
+                    <a href="{{ route('shares.create')}}" class="btn btn-primary">Tambah sepeda</a>
                     <a href="{{ route('shares.index')}}" class="btn btn-primary">Lihat daftar sepeda</a>
                 </div>
             </div>
