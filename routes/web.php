@@ -16,6 +16,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/available', function () {
+    return view('available');
+});
+Route::get('/all', function () {
+    return view('all');
+});
 
 Route::resource('shares', 'ShareController');
 
