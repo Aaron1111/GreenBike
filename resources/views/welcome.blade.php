@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@endsection
 <html>
 <head>
 <style>
@@ -30,5 +31,3 @@ body {font-family: "Lato", sans-serif;
 
 </body>
 </html>
-
-@endsection
