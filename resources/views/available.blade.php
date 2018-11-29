@@ -10,9 +10,9 @@
 <div class="w3-container">
 
   <div class="w3-bar w3-black">
-    <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'Sepeda Sedang Dipinjam')">Sepeda Sedang Dipinjam</button>
-    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Sepeda Yang Tersedia')">Sepeda Yang Tersedia</button>
-    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Semua Sepeda')">Semua Sepeda</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Sepeda Sedang Dipinjam'), location.href='/home'">Sepeda Sedang Dipinjam</button>
+    <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'Sepeda Yang Tersedia')" id="defaultOpen">Sepeda Yang Tersedia</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Semua Sepeda'), location.href='/all'">Semua Sepeda</button>
   </div>
 
   <div id="Sepeda Sedang Dipinjam" class="w3-container w3-border city"></div>

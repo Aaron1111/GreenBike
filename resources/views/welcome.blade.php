@@ -2,8 +2,19 @@
 
 @section('content')
 <html>
-<body>
+<head>
+<style>
+body {font-family: "Lato", sans-serif;
+      color:white;
+      background: url({{"/images/welcome.jpg"}});
+      background-repeat: no-repeat;
+      background-size: 100%;
+}
+</style>
+</head>
 
+
+<body>
       <h4 class="title">Selamat Datang<br>
         di GreenBike IPB</h4>
 
