@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Share;
 
+
+
 class ShareController extends Controller
 {
     /**
@@ -18,6 +20,27 @@ class ShareController extends Controller
         $count =  Share::count();
 
         return view('shares.index', compact('shares', 'count'));
+    }
+
+    public function all()
+    {
+        $shares = Share::all();
+        $count = Share::count();
+        return view('all', compact('shares', 'count'));
+    }
+
+    public function available()
+    {
+        $shares = Share::where('share_qty', 'Tersedia')->get();
+        $count = Share::count();
+        return view('available', compact('shares', 'count'));
+    }
+
+        public function Navailable()
+    {
+        $shares = Share::where('share_qty', 'Dipinjam')->get();
+        $count = Share::count();
+        return view('available', compact('shares', 'count'));
     }
 
     /**

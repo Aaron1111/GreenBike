@@ -45,7 +45,40 @@ function openCity(evt, cityName) {
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header"><center>Daftar Sepeda Yang Tersedia</center></div>
+                <table class="table table-striped">
+    <thead>
+        <tr>
+          <td>No</td>
+          <td>ID Peminjam</td>
+          <td>Nama</td>
+          <td>ID Sepeda</td>
+          <td>Jenis Sepeda</td>
+          <td>Status</td>
+          <td colspan="2">Aksi</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($shares as $share)
+        <tr>
+            <td>{{$share->id}}</td>
+            <td>{{$share->Id_peminjam}}</td>
+            <td>{{$share->Nama}}</td>
+            <td>{{$share->share_name}}</td>
+            <td>{{$share->share_price}}</td>
+            <td>{{$share->share_qty}}</td>
+            <td><a href="{{ route('shares.edit',$share->id)}}" class="btn btn-primary">Ubah</a></td>
+            <td>
+                <form action="{{ route('shares.destroy', $share->id)}}" method="post">
+                  @csrf
+                  @method('DELETE')
+                  <button class="btn btn-danger" type="submit">Hapus</button>
+                </form>
+            </td>
+          </tr>
+        @endforeach
 
+    </tbody>
+  </table>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">

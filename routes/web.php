@@ -16,15 +16,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/available', function () {
-    return view('available');
-});
-Route::get('/all', function () {
-    return view('all');
-});
-
-Route::resource('shares', 'ShareController');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'ShareController@Navailable');
+Route::get('/all', 'ShareController@all');
+Route::get('/available', 'ShareController@available');
+
+Route::resource('shares', 'ShareController');
+
