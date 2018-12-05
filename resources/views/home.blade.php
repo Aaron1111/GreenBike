@@ -46,6 +46,7 @@ function openCity(evt, cityName) {
             <div class="card">
                 <div class="card-header"><center>Daftar Sepeda Yang Sedang Dipinjam</center></div>
                 <table class="table table-striped">
+    <thead>
         <tr>
           <td>No</td>
           <td>ID Peminjam</td>
