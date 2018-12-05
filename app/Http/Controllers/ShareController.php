@@ -40,7 +40,7 @@ class ShareController extends Controller
     {
         $shares = Share::where('share_qty', 'Dipinjam')->get();
         $count = Share::count();
-        return view('available', compact('shares', 'count'));
+        return view('home', compact('shares', 'count'));
     }
 
     /**

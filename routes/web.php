@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::get('/home', 'ShareController@Navailable');
 Route::get('/all', 'ShareController@all');
 Route::get('/available', 'ShareController@available');
