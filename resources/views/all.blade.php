@@ -15,9 +15,9 @@
     <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'Semua Sepeda')" id="defaultOpen">Semua Sepeda</button>
   </div>
 
-  <div id="Sepeda Sedang Dipinjam" class="w3-container w3-border city"></div>
+  <div id="Sepeda Sedang Dipinjam" class="w3-container w3-border city" style="display:none"></div>
   <div id="Sepeda Yang Tersedia" class="w3-container w3-border city" style="display:none"></div>
-  <div id="Semua Sepeda" class="w3-container w3-border city" style="display:none"></div>
+  <div id="Semua Sepeda" class="w3-container w3-border city"></div>
 
 </div>
 
@@ -44,10 +44,7 @@ function openCity(evt, cityName) {
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-<<<<<<< HEAD
                 <div class="card-header"><center>Daftar Semua Sepeda</center></div>
-=======
-                <div class="card-header"><center>Daftar Sepeda Yang Tersedia</center></div>
                 <table class="table table-striped">
     <thead>
         <tr>
@@ -79,7 +76,6 @@ function openCity(evt, cityName) {
             </td>
           </tr>
         @endforeach
->>>>>>> 8a2a30779c4f1d071229fb13370e9598911f79fa
 
     </tbody>
   </table>

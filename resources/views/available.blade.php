@@ -15,8 +15,8 @@
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Semua Sepeda'), location.href='/all'">Semua Sepeda</button>
   </div>
 
-  <div id="Sepeda Sedang Dipinjam" class="w3-container w3-border city"></div>
-  <div id="Sepeda Yang Tersedia" class="w3-container w3-border city" style="display:none"></div>
+  <div id="Sepeda Sedang Dipinjam" class="w3-container w3-border city" style="display:none"></div>
+  <div id="Sepeda Yang Tersedia" class="w3-container w3-border city"></div>
   <div id="Semua Sepeda" class="w3-container w3-border city" style="display:none"></div>
 
 </div>
