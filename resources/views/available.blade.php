@@ -49,7 +49,7 @@ function openCity(evt, cityName) {
     <tbody>
         @foreach($shares as $share)
         <tr>
-            <td>{{$share->id}}</td>
+            <td></td>
             <td>{{$share->share_name}}</td>
             <td>{{$share->share_price}}</td>
             <td>{{$share->share_qty}}</td>
