@@ -36,7 +36,7 @@ function openCity(evt, cityName) {
 </body>
 </html>
 <br>
-<table class="w3-table-all">
+<table class="w3-table-all" border="1">
     <thead>
         <tr  class="w3-black">
           <td>No</td>

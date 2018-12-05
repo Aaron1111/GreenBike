@@ -3,8 +3,24 @@
 @section('content')
 <!DOCTYPE html>
 <html>
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 33.33%;
+}
+</style>
+</head>
 <body>
   <div class="w3-bar w3-green">
     <button class="w3-bar-item w3-button tablink w3-white" onclick="openCity(event,'Sepeda Sedang Dipinjam')" id="defaultOpen">Sepeda Sedang Dipinjam</button>
@@ -35,7 +51,7 @@ function openCity(evt, cityName) {
 </body>
 </html>
 <br>
-<table class="w3-table-all">
+<table class="w3-table-all" border="1">
     <thead>
         <tr  class="w3-black">
           <td>No</td>
