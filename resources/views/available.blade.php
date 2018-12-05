@@ -39,15 +39,11 @@ function openCity(evt, cityName) {
 
 </body>
 </html>
-
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header"><center>Daftar Sepeda Yang Tersedia</center></div>
-                  <table class="table table-striped">
+<div class="card-header"><center>Daftar Sepeda Yang Tersedia</center></div>
+<br>
+<table class="w3-table-all">
     <thead>
-        <tr>
+        <tr  class="w3-green">
           <td>No</td>
           <td>ID Sepeda</td>
           <td>Jenis Sepeda</td>
