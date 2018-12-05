@@ -52,9 +52,6 @@ function openCity(evt, cityName) {
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    <a href="{{ route('shares.create')}}" class="btn btn-primary">Tambah sepeda</a>
-                    <a href="{{ route('shares.index')}}" class="btn btn-primary">Lihat daftar sepeda</a>
                 </div>
             </div>
         </div>

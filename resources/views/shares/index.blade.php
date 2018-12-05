@@ -9,7 +9,7 @@
 <div class="uper">
   @if(session()->get('success'))
     <div class="alert alert-success">
-      {{ session()->get('success') }}  
+      {{ session()->get('success') }}
     </div><br />
   @endif
   <table class="table table-striped">
@@ -48,6 +48,7 @@
 
     </tbody>
   </table>
+  <a href="/home" class="btn btn-primary">Kembali</a>
   <a href="{{ route('shares.create')}}" class="btn btn-primary">Tambah sepeda</a>
 <div>
 @endsection
