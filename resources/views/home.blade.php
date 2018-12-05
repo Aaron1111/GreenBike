@@ -6,11 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
-
-<div class="w3-container">
-
-  <div class="w3-bar w3-black">
-    <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'Sepeda Sedang Dipinjam')" id="defaultOpen">Sepeda Sedang Dipinjam</button>
+  <div class="w3-bar w3-green">
+    <button class="w3-bar-item w3-button tablink w3-white" onclick="openCity(event,'Sepeda Sedang Dipinjam')" id="defaultOpen">Sepeda Sedang Dipinjam</button>
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Sepeda Yang Tersedia'), location.href='/available'" >Sepeda Yang Tersedia</button>
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Semua Sepeda'), location.href='/all'">Semua Sepeda</button>
   </div>
@@ -18,8 +15,6 @@
   <div id="Sepeda Sedang Dipinjam" class="w3-container w3-border city"></div>
   <div id="Sepeda Yang Tersedia" class="w3-container w3-border city" style="display:none"></div>
   <div id="Semua Sepeda" class="w3-container w3-border city" style="display:none"></div>
-
-</div>
 
 <script>
 function openCity(evt, cityName) {
@@ -39,11 +34,10 @@ function openCity(evt, cityName) {
 
 </body>
 </html>
-<div class="card-header"><center>Daftar Sepeda Yang Sedang Dipinjam</center></div>
 <br>
 <table class="w3-table-all">
     <thead>
-        <tr  class="w3-green">
+        <tr  class="w3-black">
           <td>No</td>
           <td>ID Peminjam</td>
           <td>Nama</td>
@@ -72,7 +66,6 @@ function openCity(evt, cityName) {
             </td>
           </tr>
         @endforeach
-
     </tbody>
   </table>
                 <div class="card-body">
