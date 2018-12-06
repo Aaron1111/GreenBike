@@ -24,6 +24,14 @@
         @method('PATCH')
         @csrf
         <div class="form-group">
+          <label for="name">ID Peminjam:</label>
+          <input type="text" class="form-control" name="Id_peminjam" value={{ $share->Id_peminjam }} />
+        </div>
+        <div class="form-group">
+          <label for="name">Nama:</label>
+          <input type="text" class="form-control" name="Nama" value={{ $share->Nama}} />
+        </div>
+        <div class="form-group">
           <label for="name">ID Sepeda:</label>
           <input type="text" class="form-control" name="share_name" value={{ $share->share_name }} />
         </div>
