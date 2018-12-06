@@ -32,9 +32,10 @@ function openCity(evt, cityName) {
   evt.currentTarget.className += " w3-red";
 }
 </script>
-
 </body>
 </html>
+<br>
+<a>Total sepeda yang tersedia: {{$count}}</a>
 <br>
 <table class="w3-table-all" border="1">
     <thead>

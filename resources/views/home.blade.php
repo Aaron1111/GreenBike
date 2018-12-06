@@ -65,6 +65,8 @@ function openCity(evt, cityName) {
 </body>
 </html>
 <br>
+<a>Total sepeda yang dipinjam: {{$count}}</a>
+<br>
 <table class="w3-table-all" border="1" >
     <thead>
         <tr  class="w3-black">
@@ -75,8 +77,6 @@ function openCity(evt, cityName) {
           <td><center>Jenis Sepeda</td>
           <td><center>Status</td>
           <td><center>Aksi</td>
-             <td>Total Jumlah Sepeda :</td>
-          <td>{{$count}}</td>
         </tr>
     </thead>
     <tbody>
