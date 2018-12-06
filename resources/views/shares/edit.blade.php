@@ -32,14 +32,6 @@
           <input type="text" class="form-control" name="Nama" value={{ $share->Nama}} />
         </div>
         <div class="form-group">
-          <label for="name">ID Sepeda:</label>
-          <input type="text" class="form-control" name="share_name" value={{ $share->share_name }} />
-        </div>
-        <div class="form-group">
-          <label for="price">Jenis Sepeda:</label>
-          <input type="text" class="form-control" name="share_price" value={{ $share->share_price }} />
-        </div>
-        <div class="form-group">
           <label for="quantity">Status:</label>
           <input type="text" class="form-control" name="share_qty" value={{ $share->share_qty }} />
         </div>
