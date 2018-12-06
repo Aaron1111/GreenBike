@@ -25,7 +25,6 @@
         @csrf
         <div class="form-group">
           <label for="name">ID Peminjam:</label>
-<<<<<<< HEAD
           <input type="text" class="form-control" name="Id_peminjam" value={{ $share->Id_peminjam }} />
         </div>
         <div class="form-group">
@@ -35,9 +34,6 @@
         <div class="form-group">
           <label for="name">ID Sepeda:</label>
           <input type="text" class="form-control" name="share_name" value={{ $share->share_name }} />
-=======
-          <input type="text" class="form-control" name="share_name" value={{ $share->Id_peminjam }} />
->>>>>>> f1605562ab11700f7a5b7a6bc69647e0b7a5ca2d
         </div>
         <div class="form-group">
           <label for="price">Nama:</label>
