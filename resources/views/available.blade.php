@@ -39,22 +39,22 @@ function openCity(evt, cityName) {
 <table class="w3-table-all" border="1">
     <thead>
         <tr  class="w3-black">
-          <td>No</td>
-          <td>ID Sepeda</td>
-          <td>Jenis Sepeda</td>
-          <td>Status</td>
-          <td colspan="2">Aksi</td>
+          <td><center>No</td>
+          <td><center>ID Sepeda</td>
+          <td><center>Jenis Sepeda</td>
+          <td><center>Status</td>
+          <td colspan="2"><center>Aksi</td>
         </tr>
     </thead>
     <tbody>
         @foreach($shares as $share)
         <tr>
             <td></td>
-            <td>{{$share->share_name}}</td>
+            <td><center>{{$share->share_name}}</td>
             <td>{{$share->share_price}}</td>
-            <td>{{$share->share_qty}}</td>
-            <td><a href="{{ route('shares.edit',$share->id)}}" class="btn btn-primary">Ubah</a></td>
-            <td>
+            <td><center>{{$share->share_qty}}</td>
+            <td><center><a href="{{ route('shares.edit',$share->id)}}" class="btn btn-primary">Ubah</a></td>
+            <td><center>
                 <form action="{{ route('shares.destroy', $share->id)}}" method="post">
                   @csrf
                   @method('DELETE')
