@@ -133,8 +133,8 @@ class ShareController extends Controller
     public function update(Request $request, $id)
 {
       $request->validate([
-        'Id_peminjam'=> 'required',
-        'Nama'=> 'required',
+        'Id_peminjam',
+        'Nama',
         'share_qty' => 'required'
       ]);
 
