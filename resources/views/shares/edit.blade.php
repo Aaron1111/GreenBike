@@ -36,8 +36,8 @@
           <input type="text" class="form-control" name="share_name" value={{ $share->share_name }} />
         </div>
         <div class="form-group">
-          <label for="price">Nama:</label>
-          <input type="text" class="form-control" name="share_price" value={{ $share->Nama }} />
+          <label for="price">Jenis Sepeda:</label>
+          <input type="text" class="form-control" name="share_price" value={{ $share->share_price }} />
         </div>
         <div class="form-group">
           <label for="quantity">Status:</label>
