@@ -8,7 +8,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Ubah informasi sepeda
+    Ubah Informasi Sepeda
   </div>
   <div class="card-body">
     @if ($errors->any())

@@ -29,7 +29,7 @@
     <tbody>
         @foreach($shares as $share)
         <tr>
-            <td>{{$share->id}}</td>
+            <td></td>
             <td>{{$share->Id_peminjam}}</td>
             <td>{{$share->Nama}}</td>
             <td>{{$share->share_name}}</td>

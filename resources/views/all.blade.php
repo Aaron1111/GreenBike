@@ -50,7 +50,7 @@ function openCity(evt, cityName) {
     <tbody>
         @foreach($shares as $share)
         <tr>
-            <td><center>{{$share->id}}</td>
+            <td><center></td>
             <td><center>{{$share->Id_peminjam}}</td>
             <td>{{$share->Nama}}</td>
             <td><center>{{$share->share_name}}</td>
