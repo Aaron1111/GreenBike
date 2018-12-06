@@ -70,7 +70,6 @@ function openCity(evt, cityName) {
 <table class="w3-table-all" border="1" >
     <thead>
         <tr  class="w3-black">
-          <td><center>No</td>
           <td><center>ID Peminjam</td>
           <td><center>Nama</td>
           <td><center>ID Sepeda</td>
@@ -82,7 +81,6 @@ function openCity(evt, cityName) {
     <tbody>
         @foreach($shares as $share)
         <tr>
-            <td></td>
             <td><center>{{$share->Id_peminjam}}</td>
             <td>{{$share->Nama}}</td>
             <td><center>{{$share->share_name}}</td>
