@@ -35,24 +35,22 @@ function openCity(evt, cityName) {
 </body>
 </html>
 <br>
+<a>Total sepeda : {{$count}}</a>
+<br>
 <table class="w3-table-all" border="1">
     <thead>
         <tr class="w3-black">
-          <td><center>No</td>
           <td><center>ID Peminjam</td>
           <td><center>Nama</td>
           <td><center>ID Sepeda</td>
           <td><center>Jenis Sepeda</td>
           <td><center>Status</td>
           <td colspan="2"><center>Aksi</td>
-            <td>Total Jumlah Sepeda :</td>
-          <td>{{$count}}</td>
         </tr>
     </thead>
     <tbody>
         @foreach($shares as $share)
         <tr>
-            <td><center>{{$share->id}}</td>
             <td><center>{{$share->Id_peminjam}}</td>
             <td>{{$share->Nama}}</td>
             <td><center>{{$share->share_name}}</td>
