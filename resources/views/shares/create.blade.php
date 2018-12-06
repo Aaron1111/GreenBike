@@ -41,7 +41,11 @@
           </div>
           <div class="form-group">
               <label for="quantity">Status:</label>
-              <input type="text" class="form-control" name="share_qty"/>
+              <select class="form-control">
+                <option input type="dropdown" value="Tersedia" name="share_qty">Tersedia</option>
+                <option input type="dropdown" value="Dipinjam" name="share_qty">Dipinjam</option>
+              </select>
+              <!-- <input type="text" class="form-control" name="share_qty"/> -->
           </div>
           <button type="submit" class="btn btn-primary">Tambah</button>
       </form>
