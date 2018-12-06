@@ -135,16 +135,12 @@ class ShareController extends Controller
       $request->validate([
         'Id_peminjam'=> 'required',
         'Nama'=> 'required',
-        'share_name'=>'required',
-        'share_price'=> 'required',
         'share_qty' => 'required'
       ]);
 
       $share = Share::find($id);
       $share->Id_peminjam = $request->get('Id_peminjam');
       $share->Nama = $request->get('Nama');
-      $share->share_name = $request->get('share_name');
-      $share->share_price = $request->get('share_price');
       $share->share_qty = $request->get('share_qty');
       $share->save();
 
