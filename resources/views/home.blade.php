@@ -74,7 +74,7 @@ function openCity(evt, cityName) {
           <td><center>ID Sepeda</td>
           <td><center>Jenis Sepeda</td>
           <td><center>Status</td>
-          <td colspan="2"><center>Aksi</td>
+          <td><center>Aksi</td>
         </tr>
     </thead>
     <tbody>
@@ -87,13 +87,6 @@ function openCity(evt, cityName) {
             <td>{{$share->share_price}}</td>
             <td><center>{{$share->share_qty}}</td>
             <td><center><a href="{{ route('shares.edit',$share->id)}}" class="btn btn-primary">Ubah</a></td>
-            <td><center>
-                <form action="{{ route('shares.destroy', $share->id)}}" method="post">
-                  @csrf
-                  @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Hapus</button>
-                </form>
-            </td>
           </tr>
         @endforeach
     </tbody>
