@@ -32,14 +32,14 @@ class ShareController extends Controller
     public function available()
     {
         $shares = Share::where('share_qty', 'Tersedia')->get();
-        $count = Share::count();
+        $count = Share::where('share_qty', 'Tersedia')->count();
         return view('available', compact('shares', 'count'));
     }
 
         public function Navailable()
     {
         $shares = Share::where('share_qty', 'Dipinjam')->get();
-        $count = Share::count();
+        $count = Share::where('share_qty', 'Dipinjam')->count();
         return view('home', compact('shares', 'count'));
     }
 
