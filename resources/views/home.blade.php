@@ -19,6 +19,20 @@
     font-size: 17px;
     width: 33.33%;
 }
+
+table {
+    counter-reset: rowNumber;
+}
+
+table tr {
+    counter-increment: rowNumber;
+}
+
+table tr td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+}
 </style>
 </head>
 <body>
@@ -51,7 +65,7 @@ function openCity(evt, cityName) {
 </body>
 </html>
 <br>
-<table class="w3-table-all" border="1">
+<table class="w3-table-all" border="1" >
     <thead>
         <tr  class="w3-black">
           <td><center>No</td>
@@ -66,7 +80,7 @@ function openCity(evt, cityName) {
     <tbody>
         @foreach($shares as $share)
         <tr>
-            <td><center></td>
+            <td></td>
             <td><center>{{$share->Id_peminjam}}</td>
             <td>{{$share->Nama}}</td>
             <td><center>{{$share->share_name}}</td>
