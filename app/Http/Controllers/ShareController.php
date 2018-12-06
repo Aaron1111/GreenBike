@@ -62,9 +62,9 @@ class ShareController extends Controller
     public function store(Request $request)
     {
       $request->validate([
-        'Id_peminjam'=>'required',
-        'Nama'=>'required',
-        'share_name'=>'required|integer',
+        'Id_peminjam',
+        'Nama',
+        'share_name'=>'required',
         'share_price'=> 'required',
         'share_qty' => 'required'
       ]);
