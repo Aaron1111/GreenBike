@@ -33,8 +33,8 @@ class ShareController extends Controller
 
     public function available()
     {
-        $shares = Share::where('share_qty', 'Tersedia')->get();
-        $count = Share::where('share_qty', 'Tersedia')->count();
+        $shares = Share::where('status', 'Tersedia')->get();
+        $count = Share::where('status', 'Tersedia')->count();
         return view('available', compact('shares', 'count'));
     }
 
@@ -44,10 +44,10 @@ class ShareController extends Controller
      
            // $countdown= Countdown::from($now->copy()->subYears(5))
         //                 ->to($now)->get();
-        $shares = Share::where('share_qty', 'Dipinjam')->get();
-        $count = Share::where('share_qty', 'Dipinjam')->count();
+        $shares = Share::where('status', 'Dipinjam')->get();
+        $count = Share::where('status', 'Dipinjam')->count();
 
-              $now2= Share::where('share_qty', 'Dipinjam')->select('created_at')->get();
+              $now2= Share::where('status', 'Dipinjam')->select('created_at')->get();
         $now  = Carbon::now();
         for ($i=0; $i <$count ; $i++) { 
             # code...
@@ -90,18 +90,18 @@ class ShareController extends Controller
     public function store(Request $request)
     {
       $request->validate([
-        'Id_peminjam'=>'unique:shares|regex:/G64[0-9]{6}/',
-        'Nama',
-        'share_name'=>'required|unique:shares',
-        'share_price'=> 'required',
-        'share_qty' => 'required'
+        'nim'=>'unique:shares|regex:/[A-Z][0-9]{8}/',
+        'nama'=>'regex:/[A-Z]{1,20}/',
+        'id_sepeda'=>'required|unique:shares|regex:/[0-9]{4}/',
+        'jenis_sepeda'=> 'required|regex:/[A-Z]{3}/',
+        'status' => 'required'
       ]);
       $share = new Share([
-        'Id_peminjam'=> $request->get('Id_peminjam'),
-        'Nama'=> $request->get('Nama'),
-        'share_name' => $request->get('share_name'),
-        'share_price'=> $request->get('share_price'),
-        'share_qty'=> $request->get('share_qty')
+        'nim'=> $request->get('nim'),
+        'nama'=> $request->get('nama'),
+        'id_sepeda' => $request->get('id_sepeda'),
+        'jenis_sepeda'=> $request->get('jenis_sepeda'),
+        'status'=> $request->get('status')
       ]);
       $share->save();
       return redirect('/all')->with('success', 'Sepeda berhasil ditambahkan');
@@ -161,15 +161,15 @@ class ShareController extends Controller
     public function update(Request $request, $id)
 {
       $request->validate([
-        'Id_peminjam'=> 'regex:/\G64[0-9]{6}',
-        'Nama',
-        'share_qty' => 'required'
+        'nim'=> 'regex:/\G64[0-9]{6}',
+        'nama',
+        'status' => 'required'
       ]);
 
       $share = Share::find($id);
-      $share->Id_peminjam = $request->get('Id_peminjam');
-      $share->Nama = $request->get('Nama');
-      $share->share_qty = $request->get('share_qty');
+      $share->nim = $request->get('nim');
+      $share->nama = $request->get('nama');
+      $share->status = $request->get('status');
       $share->save();
 
       return redirect('/shares')->with('success', 'Sepeda berhasil diperbarui');

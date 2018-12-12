@@ -24,28 +24,28 @@
       	 <div class="form-group">
               @csrf
               <label for="name">NIM:</label>
-              <input type="text" class="form-control" name="Id_peminjam"/>
+              <input type="text" class="form-control" name="nim"/>
           </div> <div class="form-group">
               @csrf
               <label for="name">Nama:</label>
-              <input type="text" class="form-control" name="Nama"/>
+              <input type="text" class="form-control" name="nama"/>
           </div>
           <div class="form-group">
               @csrf
               <label for="name">ID Sepeda:</label>
-              <input type="text" class="form-control" name="share_name"/>
+              <input type="text" class="form-control" name="id_sepeda"/>
           </div>
           <div class="form-group">
               <label for="price">Jenis Sepeda :</label>
-              <input type="text" class="form-control" name="share_price"/>
+              <input type="text" class="form-control" name="jenis_sepeda"/>
           </div>
           <div class="form-group">
               <label for="quantity">Status:</label>
-              <select name="share_qty" class="form-control">
+              <select name="status" class="form-control">
                 <option value="Tersedia" >Tersedia</option>
                 <option value="Dipinjam">Dipinjam</option>
               </select>
-              <!-- <input type="text" class="form-control" name="share_qty"/> -->
+              <!-- <input type="text" class="form-control" name="Status"/> -->
           </div>
           <button type="submit" class="btn btn-primary">Tambah</button>
       </form>
