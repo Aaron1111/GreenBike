@@ -65,7 +65,7 @@ function openCity(evt, cityName) {
 </body>
 </html>
 <br>
-<a>Total sepeda yang dipinjam: {{$count}}</a>
+<a>Total sepeda yang dipinjam: {{$count}}Sisa waktu peminjaman : {{$dd}} hari&nbsp{{$hh}} jam&nbsp{{$mm}} menit&nbsp{{$ss}} detik</a>
 <br>
 <table class="w3-table-all" border="1" >
     <thead>
