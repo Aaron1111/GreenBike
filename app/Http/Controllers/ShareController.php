@@ -39,16 +39,22 @@ class ShareController extends Controller
 
         public function Navailable()
     {
-        $future = Carbon::now()->addMonths(3);
-        $now = Carbon::now();
-        $now =$now->diffInDays($future); 
-
+        $future = new Carbon('last day of December 2018', 'Asia/Jakarta');
+        $now = new Carbon('now', 'Asia/Jakarta');
+        $diff = $now->diffInSeconds($future);
+       $ddss =  $diff          % 86400;
+        $dd   = ($diff - $ddss) / 86400;
+        $hhss =  $ddss          %  3600;
+        $hh   = ($ddss - $hhss) /  3600;
+        $mmss =  $hhss          %    60;
+        $mm   = ($hhss - $mmss) /    60;
+        $ss   =  $mmss          %    60;
         // $countdown= Countdown::from($now->copy()->subYears(5))
         //                 ->to($now)->get();
         $shares = Share::where('share_qty', 'Dipinjam')->get();
         $count = Share::where('share_qty', 'Dipinjam')->count();
-        return view('home', compact('shares', 'count', 'now'));
-    }
+        return view('home', compact('shares', 'count', 'now','dd','hh','mm','ss'));
+    }   
 
     /**
      * Show the form for creating a new resource.
