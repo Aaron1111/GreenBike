@@ -12,8 +12,10 @@
       {{ session()->get('success') }}
     </div><br />
   @endif
+  <h1><center>Daftar Sepeda</h1>
+    <br>
   <a>Total Jumlah Sepeda : {{$count}}</a>
-  <table class="table table-striped">
+  <table class="table table-striped" border="1">
     <thead>
         <tr>
           <td><center>ID Peminjam</td>
