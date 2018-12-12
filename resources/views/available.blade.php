@@ -50,7 +50,7 @@ function openCity(evt, cityName) {
         @foreach($shares as $share)
         <tr>
             <td><center>{{$share->share_name}}</td>
-            <td>{{$share->share_price}}</td>
+            <td><center>{{$share->share_price}}</td>
             <td><center>{{$share->share_qty}}</td>
             <td><center><a href="{{ route('shares.edit',$share->id)}}" class="btn btn-primary">Ubah</a></td>
           </tr>

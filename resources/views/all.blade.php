@@ -55,7 +55,7 @@ function openCity(evt, cityName) {
             <td><center>{{$share->Id_peminjam}}</td>
             <td>{{$share->Nama}}</td>
             <td><center>{{$share->share_name}}</td>
-            <td>{{$share->share_price}}</td>
+            <td><center>{{$share->share_price}}</td>
             <td><center>{{$share->share_qty}}</td>
             <td><center><a href="{{ route('shares.edit',$share->id)}}" class="btn btn-primary">Ubah</a></td>
             <td><center>
