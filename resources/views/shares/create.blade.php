@@ -51,5 +51,5 @@
       </form>
   </div>
 </div>
-  <a href="{{ route('shares.index')}}" class="btn btn-primary">Lihat daftar sepeda</a>
+  <a href="/all" class="btn btn-primary">Lihat daftar sepeda</a>
 @endsection

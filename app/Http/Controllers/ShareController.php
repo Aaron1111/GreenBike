@@ -155,7 +155,7 @@ class ShareController extends Controller
         $share = Share::find($id);
      $share->delete();
 
-     return redirect('/shares')->with('success', 'Sepeda berhasil dihapus');
+     return redirect('/all')->with('success', 'Sepeda berhasil dihapus');
     }
 
     public function update(Request $request, $id)
@@ -172,7 +172,7 @@ class ShareController extends Controller
       $share->status = $request->get('status');
       $share->save();
 
-      return redirect('/shares')->with('success', 'Sepeda berhasil diperbarui');
+      return redirect('/all')->with('success', 'Sepeda berhasil diperbarui');
 }
 
 }
