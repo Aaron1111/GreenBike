@@ -65,7 +65,7 @@ function openCity(evt, cityName) {
 </body>
 </html>
 <br>
-<a>Total sepeda yang dipinjam: {{$count}}Sisa waktu peminjaman : {{$dd}} hari&nbsp{{$hh}} jam&nbsp{{$mm}} menit&nbsp{{$ss}} detik</a>
+<a>Total sepeda yang dipinjam: {{$count}}
 <br>
 <table class="w3-table-all" border="1" >
     <thead>
@@ -75,17 +75,19 @@ function openCity(evt, cityName) {
           <td><center>ID Sepeda</td>
           <td><center>Jenis Sepeda</td>
           <td><center>Status</td>
-          <td><center>Aksi</td>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($shares as $share)
-        <tr>
-            <td><center>{{$share->Id_peminjam}}</td>
-            <td>{{$share->Nama}}</td>
-            <td><center>{{$share->share_name}}</td>
-            <td>{{$share->share_price}}</td>
-            <td><center>{{$share->share_qty}}</td>
+            <td><center>Sisa Waktu</td>
+            <td><center>Aksi</td>
+          </tr>
+      </thead>
+      <tbody>
+          @foreach($shares as $share)
+          <tr>
+              <td><center>{{$share->Id_peminjam}}</td>
+              <td>{{$share->Nama}}</td>
+              <td><center>{{$share->share_name}}</td>
+              <td>{{$share->share_price}}</td>
+              <td><center>{{$share->share_qty}}</td>
+              <td><center>{{$dd}} hari, &nbsp {{$hh}}:&nbsp{{$mm}}:&nbsp{{$ss}} s</td>
             <td><center><a href="{{ route('shares.edit',$share->id)}}" class="btn btn-primary">Ubah</a></td>
           </tr>
         @endforeach

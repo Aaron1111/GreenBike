@@ -32,8 +32,12 @@
           <input type="text" class="form-control" name="Nama" value={{ $share->Nama}} />
         </div>
         <div class="form-group">
-          <label for="quantity">Status:</label>
-          <input type="text" class="form-control" name="share_qty" value={{ $share->share_qty }} />
+            <label for="quantity">Status:</label>
+            <select name="share_qty" class="form-control">
+              <option value="Tersedia" >Tersedia</option>
+              <option value="Dipinjam">Dipinjam</option>
+            </select>
+            <!-- <input type="text" class="form-control" name="share_qty"/> -->
         </div>
         <button type="submit" class="btn btn-primary">Perbarui</button>
       </form>
