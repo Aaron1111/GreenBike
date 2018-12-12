@@ -40,9 +40,19 @@ class ShareController extends Controller
 
         public function Navailable()
     {
-        $now2= Share::where('share_qty', 'Dipinjam')->select('created_at')->get();
+  
+     
+           // $countdown= Countdown::from($now->copy()->subYears(5))
+        //                 ->to($now)->get();
+        $shares = Share::where('share_qty', 'Dipinjam')->get();
+        $count = Share::where('share_qty', 'Dipinjam')->count();
+
+              $now2= Share::where('share_qty', 'Dipinjam')->select('created_at')->get();
         $now  = Carbon::now();
-        $future = Carbon::parse(($now2[0]->created_at->toDateTimeString()))->addDays(180);
+        for ($i=0; $i <$count ; $i++) { 
+            # code...
+        
+        $future = Carbon::parse(($now2[$i]->created_at->toDateTimeString()))->addDays(180);
        // $now = Carbon::parse($now3)->format('Y/m/d')->addDays(30);
         // $future = Carbon::parse($future2)->format('Y/m/d');
         // $future = new Carbon('last day of December 2018', 'Asia/Jakarta');
@@ -55,10 +65,7 @@ class ShareController extends Controller
          $mmss =  $hhss          %    60;
         $mm   = ($hhss - $mmss) /    60;
          $ss   =  $mmss          %    60;
-      // $countdown= Countdown::from($now->copy()->subYears(5))
-        //                 ->to($now)->get();
-        $shares = Share::where('share_qty', 'Dipinjam')->get();
-        $count = Share::where('share_qty', 'Dipinjam')->count();
+}
         return view('home', compact('shares', 'count', 'now','dd','hh','mm','ss','future'));
     }   
 
@@ -97,7 +104,7 @@ class ShareController extends Controller
         'share_qty'=> $request->get('share_qty')
       ]);
       $share->save();
-      return redirect('/shares')->with('success', 'Sepeda berhasil ditambahkan');
+      return redirect('/all')->with('success', 'Sepeda berhasil ditambahkan');
     }
 
     /**
