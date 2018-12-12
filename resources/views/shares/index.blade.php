@@ -21,7 +21,7 @@
   <table class="table table-striped" border="1">
     <thead>
         <tr>
-          <td><center>ID Peminjam</td>
+          <td><center>NIM</td>
           <td><center>Nama</td>
           <td><center>ID Sepeda</td>
           <td><center>Jenis Sepeda</td>
