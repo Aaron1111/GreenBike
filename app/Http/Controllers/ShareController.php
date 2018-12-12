@@ -161,7 +161,7 @@ class ShareController extends Controller
     public function update(Request $request, $id)
 {
       $request->validate([
-        'nim'=>'required|unique:shares|regex:/[A-Z][0-9]{8}/',
+        'nim'=>'required|regex:/[A-Z][0-9]{8}/',
         'nama'=>'required_if:status,Dipinjam',
         'status' => 'required'
       ]);

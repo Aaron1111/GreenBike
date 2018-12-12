@@ -7,9 +7,9 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
   <div class="w3-bar w3-green">
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Semua Sepeda'), location.href='/all'">Semua Sepeda</button>
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Sepeda Sedang Dipinjam'), location.href='/home'">Sepeda Sedang Dipinjam</button>
     <button class="w3-bar-item w3-button tablink w3-white" onclick="openCity(event,'Sepeda Yang Tersedia')" id="defaultOpen">Sepeda Yang Tersedia</button>
-    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Semua Sepeda'), location.href='/all'">Semua Sepeda</button>
   </div>
 
   <div id="Sepeda Sedang Dipinjam" class="w3-container w3-border city" style="display:none"></div>
