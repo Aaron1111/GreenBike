@@ -34,7 +34,7 @@ function openCity(evt, cityName) {
 
 </body
 </html>
-<a href="{{ route('shares.create')}}" class="btn btn-primary" style="float:right">Tambah sepeda</a>
+<a href="{{ route('shares.create')}}" class="btn btn-primary" style="float:right">&plus; Tambah sepeda</a>
 <br>
 <a>Total sepeda : {{$count}}</a>
 <br>
