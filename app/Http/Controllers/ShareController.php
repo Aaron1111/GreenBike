@@ -90,7 +90,7 @@ class ShareController extends Controller
     public function store(Request $request)
     {
       $request->validate([
-        'Id_peminjam'=>'unique:shares',
+        'Id_peminjam'=>'unique:shares|regex:/G64[0-9]{6}/',
         'Nama',
         'share_name'=>'required|unique:shares',
         'share_price'=> 'required',
@@ -161,7 +161,7 @@ class ShareController extends Controller
     public function update(Request $request, $id)
 {
       $request->validate([
-        'Id_peminjam',
+        'Id_peminjam'=> 'regex:/\G64[0-9]{6}',
         'Nama',
         'share_qty' => 'required'
       ]);
