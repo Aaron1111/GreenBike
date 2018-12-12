@@ -14,6 +14,9 @@
   @endif
   <h1><center>Daftar Sepeda</h1>
     <br>
+    <a href="/home" class="btn btn-primary">Kembali</a>
+    <a href="{{ route('shares.create')}}" class="btn btn-primary" style="float:right">&plus; Tambah sepeda</a>
+    <br>
   <a>Total Jumlah Sepeda : {{$count}}</a>
   <table class="table table-striped" border="1">
     <thead>
@@ -47,7 +50,6 @@
 
     </tbody>
   </table>
-  <a href="/home" class="btn btn-primary">Kembali</a>
-  <a href="{{ route('shares.create')}}" class="btn btn-primary">Tambah sepeda</a>
+
 <div>
 @endsection
