@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Share;
 use jpmurray\LaravelCountdown\Countdown;
 use Carbon\Carbon;
+use DB;
 
 
 class ShareController extends Controller
@@ -39,21 +40,26 @@ class ShareController extends Controller
 
         public function Navailable()
     {
-        $future = new Carbon('last day of December 2018', 'Asia/Jakarta');
-        $now = new Carbon('now', 'Asia/Jakarta');
-        $diff = $now->diffInSeconds($future);
-       $ddss =  $diff          % 86400;
-        $dd   = ($diff - $ddss) / 86400;
-        $hhss =  $ddss          %  3600;
-        $hh   = ($ddss - $hhss) /  3600;
-        $mmss =  $hhss          %    60;
+        $now2= Share::where('share_qty', 'Dipinjam')->select('created_at')->get();
+        $now  = Carbon::now();
+        $future = Carbon::parse(($now2[0]->created_at->toDateTimeString()))->addDays(180);
+       // $now = Carbon::parse($now3)->format('Y/m/d')->addDays(30);
+        // $future = Carbon::parse($future2)->format('Y/m/d');
+        // $future = new Carbon('last day of December 2018', 'Asia/Jakarta');
+        //$now = new Carbon('now', 'Asia/Jakarta');
+         $diff = $now->diffInSeconds($future);
+        $ddss =  $diff          % 86400;
+         $dd   = ($diff - $ddss) / 86400;
+         $hhss =  $ddss          %  3600;
+         $hh   = ($ddss - $hhss) /  3600;
+         $mmss =  $hhss          %    60;
         $mm   = ($hhss - $mmss) /    60;
-        $ss   =  $mmss          %    60;
-        // $countdown= Countdown::from($now->copy()->subYears(5))
+         $ss   =  $mmss          %    60;
+      // $countdown= Countdown::from($now->copy()->subYears(5))
         //                 ->to($now)->get();
         $shares = Share::where('share_qty', 'Dipinjam')->get();
         $count = Share::where('share_qty', 'Dipinjam')->count();
-        return view('home', compact('shares', 'count', 'now','dd','hh','mm','ss'));
+        return view('home', compact('shares', 'count', 'now','dd','hh','mm','ss','future'));
     }   
 
     /**
