@@ -23,7 +23,7 @@
       <form method="post" action="{{ route('shares.store') }}">
       	 <div class="form-group">
               @csrf
-              <label for="name">ID Peminjam:</label>
+              <label for="name">NIM:</label>
               <input type="text" class="form-control" name="Id_peminjam"/>
           </div> <div class="form-group">
               @csrf

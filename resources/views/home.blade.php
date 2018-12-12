@@ -70,7 +70,7 @@ function openCity(evt, cityName) {
 <table class="w3-table-all" border="1" >
     <thead>
         <tr  class="w3-black">
-          <td><center>ID Peminjam</td>
+          <td><center>NIM</td>
           <td><center>Nama</td>
           <td><center>ID Sepeda</td>
           <td><center>Jenis Sepeda</td>
