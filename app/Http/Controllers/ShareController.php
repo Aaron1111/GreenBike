@@ -90,8 +90,8 @@ class ShareController extends Controller
     public function store(Request $request)
     {
       $request->validate([
-        'nim'=>'unique:shares|regex:/[A-Z][0-9]{8}/',
-        'nama'=>'regex:/[A-Z]{1,20}/',
+        'nim'=>'required|unique:shares|regex:/[A-Z][0-9]{8}/',
+        'nama'=>'required_if:status,Dipinjam',
         'id_sepeda'=>'required|unique:shares|regex:/[0-9]{4}/',
         'jenis_sepeda'=> 'required|regex:/[A-Z]{3}/',
         'status' => 'required'
@@ -161,8 +161,8 @@ class ShareController extends Controller
     public function update(Request $request, $id)
 {
       $request->validate([
-        'nim'=> 'regex:/\G64[0-9]{6}',
-        'nama',
+        'nim'=>'required|unique:shares|regex:/[A-Z][0-9]{8}/',
+        'nama'=>'required_if:status,Dipinjam',
         'status' => 'required'
       ]);
 
