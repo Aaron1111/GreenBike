@@ -24,10 +24,13 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+          <img src="/images/ipb.png" alt="IPB" style="width:50px;height:40px; "></img>
+          &nbsp
+          <a class="navbar-brand" href="{{ url('/') }}">
+              {{'GreenBike IPB'}}
+          </a>
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{'GreenBike IPB'}}
-                </a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
