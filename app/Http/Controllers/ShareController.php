@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Share;
-
+use jpmurray\LaravelCountdown\Countdown;
+use Carbon\Carbon;
 
 
 class ShareController extends Controller
@@ -38,9 +39,15 @@ class ShareController extends Controller
 
         public function Navailable()
     {
+        $future = Carbon::now()->addMonths(3);
+        $now = Carbon::now();
+        $now =$now->diffInDays($future); 
+
+        // $countdown= Countdown::from($now->copy()->subYears(5))
+        //                 ->to($now)->get();
         $shares = Share::where('share_qty', 'Dipinjam')->get();
         $count = Share::where('share_qty', 'Dipinjam')->count();
-        return view('home', compact('shares', 'count'));
+        return view('home', compact('shares', 'count', 'now'));
     }
 
     /**
@@ -50,6 +57,8 @@ class ShareController extends Controller
      */
     public function create()
     {
+        
+
         return view('shares.create');
     }
 
