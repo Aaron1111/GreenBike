@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<style>
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+</style>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,6 +68,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                  <a class="dropdown-item" href="/profil">
+                                      <img src="/images/img_avatar.png" alt="Avatar" class="avatar">
+                                      {{ Auth::user()->name }}
+                                  </a>
 
                                   <a class="dropdown-item" href="/home">
                                       Beranda

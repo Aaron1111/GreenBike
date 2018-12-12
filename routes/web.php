@@ -16,6 +16,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/profil', function () {
+    return view('profil');
+});
 
 Auth::routes();
 
@@ -25,4 +28,3 @@ Route::get('/all', 'ShareController@all');
 Route::get('/available', 'ShareController@available');
 
 Route::resource('shares', 'ShareController');
-
