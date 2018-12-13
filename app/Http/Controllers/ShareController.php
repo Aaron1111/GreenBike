@@ -33,16 +33,26 @@ class ShareController extends Controller
 
     public function available()
     {
-        $shares = Share::where('share_qty', 'Tersedia')->get();
-        $count = Share::where('share_qty', 'Tersedia')->count();
+        $shares = Share::where('status', 'Tersedia')->get();
+        $count = Share::where('status', 'Tersedia')->count();
         return view('available', compact('shares', 'count'));
     }
 
         public function Navailable()
     {
-        $now2= Share::where('share_qty', 'Dipinjam')->select('created_at')->get();
+  
+     
+           // $countdown= Countdown::from($now->copy()->subYears(5))
+        //                 ->to($now)->get();
+        $shares = Share::where('status', 'Dipinjam')->get();
+        $count = Share::where('status', 'Dipinjam')->count();
+
+              $now2= Share::where('status', 'Dipinjam')->select('created_at')->get();
         $now  = Carbon::now();
-        $future = Carbon::parse(($now2[0]->created_at->toDateTimeString()))->addDays(180);
+        for ($i=0; $i <$count ; $i++) { 
+            # code...
+        
+        $future = Carbon::parse(($now2[$i]->created_at->toDateTimeString()))->addDays(180);
        // $now = Carbon::parse($now3)->format('Y/m/d')->addDays(30);
         // $future = Carbon::parse($future2)->format('Y/m/d');
         // $future = new Carbon('last day of December 2018', 'Asia/Jakarta');
@@ -55,10 +65,7 @@ class ShareController extends Controller
          $mmss =  $hhss          %    60;
         $mm   = ($hhss - $mmss) /    60;
          $ss   =  $mmss          %    60;
-      // $countdown= Countdown::from($now->copy()->subYears(5))
-        //                 ->to($now)->get();
-        $shares = Share::where('share_qty', 'Dipinjam')->get();
-        $count = Share::where('share_qty', 'Dipinjam')->count();
+}
         return view('home', compact('shares', 'count', 'now','dd','hh','mm','ss','future'));
     }   
 
@@ -83,21 +90,21 @@ class ShareController extends Controller
     public function store(Request $request)
     {
       $request->validate([
-        'Id_peminjam'=>'unique:shares',
-        'Nama',
-        'share_name'=>'required|unique:shares',
-        'share_price'=> 'required',
-        'share_qty' => 'required'
+        'nim'=>'required|unique:shares|regex:/[A-Z][0-9]{8}/',
+        'nama'=>'required_if:status,Dipinjam',
+        'id_sepeda'=>'required|unique:shares|regex:/[0-9]{4}/',
+        'jenis_sepeda'=> 'required|regex:/[A-Z]{3}/',
+        'status' => 'required'
       ]);
       $share = new Share([
-        'Id_peminjam'=> $request->get('Id_peminjam'),
-        'Nama'=> $request->get('Nama'),
-        'share_name' => $request->get('share_name'),
-        'share_price'=> $request->get('share_price'),
-        'share_qty'=> $request->get('share_qty')
+        'nim'=> $request->get('nim'),
+        'nama'=> $request->get('nama'),
+        'id_sepeda' => $request->get('id_sepeda'),
+        'jenis_sepeda'=> $request->get('jenis_sepeda'),
+        'status'=> $request->get('status')
       ]);
       $share->save();
-      return redirect('/shares')->with('success', 'Sepeda berhasil ditambahkan');
+      return redirect('/all')->with('success', 'Sepeda berhasil ditambahkan');
     }
 
     /**
@@ -148,24 +155,24 @@ class ShareController extends Controller
         $share = Share::find($id);
      $share->delete();
 
-     return redirect('/shares')->with('success', 'Sepeda berhasil dihapus');
+     return redirect('/all')->with('success', 'Sepeda berhasil dihapus');
     }
 
     public function update(Request $request, $id)
 {
       $request->validate([
-        'Id_peminjam',
-        'Nama',
-        'share_qty' => 'required'
+        'nim'=>'required|regex:/[A-Z][0-9]{8}/',
+        'nama'=>'required_if:status,Dipinjam',
+        'status' => 'required'
       ]);
 
       $share = Share::find($id);
-      $share->Id_peminjam = $request->get('Id_peminjam');
-      $share->Nama = $request->get('Nama');
-      $share->share_qty = $request->get('share_qty');
+      $share->nim = $request->get('nim');
+      $share->nama = $request->get('nama');
+      $share->status = $request->get('status');
       $share->save();
 
-      return redirect('/shares')->with('success', 'Sepeda berhasil diperbarui');
+      return redirect('/all')->with('success', 'Sepeda berhasil diperbarui');
 }
 
 }

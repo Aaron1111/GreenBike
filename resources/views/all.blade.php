@@ -7,9 +7,9 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
   <div class="w3-bar w3-green">
+    <button class="w3-bar-item w3-button tablink w3-white" onclick="openCity(event,'Semua Sepeda')" id="defaultOpen">Semua Sepeda</button>
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Sepeda Sedang Dipinjam'), location.href='/home'">Sepeda Sedang Dipinjam</button>
     <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Sepeda Yang Tersedia'), location.href='/available'">Sepeda Yang Tersedia</button>
-    <button class="w3-bar-item w3-button tablink w3-white" onclick="openCity(event,'Semua Sepeda')" id="defaultOpen">Semua Sepeda</button>
   </div>
 
   <div id="Sepeda Sedang Dipinjam" class="w3-container w3-border city" style="display:none"></div>
@@ -52,11 +52,11 @@ function openCity(evt, cityName) {
     <tbody>
         @foreach($shares as $share)
         <tr>
-            <td><center>{{$share->Id_peminjam}}</td>
-            <td>{{$share->Nama}}</td>
-            <td><center>{{$share->share_name}}</td>
-            <td><center>{{$share->share_price}}</td>
-            <td><center>{{$share->share_qty}}</td>
+            <td><center>{{$share->nim}}</td>
+            <td>{{$share->nama}}</td>
+            <td><center>{{$share->id_sepeda}}</td>
+            <td><center>{{$share->jenis_sepeda}}</td>
+            <td><center>{{$share->status}}</td>
             <td><center><a href="{{ route('shares.edit',$share->id)}}" class="btn btn-primary">Ubah</a></td>
             <td><center>
                 <form action="{{ route('shares.destroy', $share->id)}}" method="post">
