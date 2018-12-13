@@ -40,8 +40,8 @@ class ShareController extends Controller
 
         public function Navailable()
     {
-  
-     
+
+
            // $countdown= Countdown::from($now->copy()->subYears(5))
         //                 ->to($now)->get();
         $shares = Share::where('status', 'Dipinjam')->get();
@@ -49,9 +49,9 @@ class ShareController extends Controller
 
               $now2= Share::where('status', 'Dipinjam')->select('created_at')->get();
         $now  = Carbon::now();
-        for ($i=0; $i <$count ; $i++) { 
+        for ($i=0; $i <$count ; $i++) {
             # code...
-        
+
         $future = Carbon::parse(($now2[$i]->created_at->toDateTimeString()))->addDays(180);
        // $now = Carbon::parse($now3)->format('Y/m/d')->addDays(30);
         // $future = Carbon::parse($future2)->format('Y/m/d');
@@ -67,7 +67,7 @@ class ShareController extends Controller
          $ss   =  $mmss          %    60;
 }
         return view('home', compact('shares', 'count', 'now','dd','hh','mm','ss','future'));
-    }   
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -76,7 +76,7 @@ class ShareController extends Controller
      */
     public function create()
     {
-        
+
 
         return view('shares.create');
     }
@@ -92,7 +92,7 @@ class ShareController extends Controller
       $request->validate([
         'nim'=>'required|unique:shares|regex:/[A-Z][0-9]{8}/',
         'nama'=>'required_if:status,Dipinjam',
-        'id_sepeda'=>'required|unique:shares|regex:/[0-9]{4}/',
+        'id_sepeda'=>'required|unique:shares|regex:/[A-Z]{3}[0-9]{3}/',
         'jenis_sepeda'=> 'required|regex:/[A-Z]{3}/',
         'status' => 'required'
       ]);
