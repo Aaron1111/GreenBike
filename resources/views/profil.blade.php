@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+@guest
+<h1><center><br><br><br><br><br><br>
+Anda akan dialihkan ke halaman login dalam sesaat
+<meta http-equiv="refresh" content="4;URL='/login'" >
+</center></h1>
+@else
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,4 +36,5 @@
 
 </body>
 </html>
+@endguest
 @endsection

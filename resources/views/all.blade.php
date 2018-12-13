@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+@guest
+<h1><center><br><br><br><br><br><br>
+Anda akan dialihkan ke halaman login dalam sesaat
+</center></h1>
+<meta http-equiv="refresh" content="4;URL='/login'" >
+@else
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -81,4 +87,5 @@ function openCity(evt, cityName) {
         </div>
     </div>
 </div>
+@endguest
 @endsection

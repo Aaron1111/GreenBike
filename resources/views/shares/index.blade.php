@@ -1,6 +1,12 @@
 @extends('layout')
 
 @section('content')
+@guest
+<h1><center><br><br><br><br><br><br>
+Anda akan dialihkan ke halaman login dalam sesaat
+</center></h1>
+<meta http-equiv="refresh" content="4;URL='/login'" >
+@else
 <style>
   .uper {
     margin-top: 40px;
@@ -52,4 +58,5 @@
   </table>
 
 <div>
+@endguest
 @endsection
